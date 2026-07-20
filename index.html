@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIT Jodhpur ERP System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== TOP HEADER ===== -->
+  <div class="login-header d-flex align-items-center" style="gap: 14px; padding: 5px 16px;">
+    <img src="assets/iitj-logo.png.jpg" alt="IIT Jodhpur Logo" class="header-logo" />
+    <div>
+      <div class="header-title">Indian Institute of Technology Jodhpur</div>
+      <div class="header-subtitle">Enterprise Resource Planning (Beta Version)</div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="login-body">
+
+    <!-- LEFT: Info Panel -->
+    <div class="login-left">
+      <div class="info-card">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs info-tabs" id="infoTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="important-tab" data-bs-toggle="tab"
+              data-bs-target="#important" type="button" role="tab">Important</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="message-tab" data-bs-toggle="tab"
+              data-bs-target="#message" type="button" role="tab">Message</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="quicklinks-tab" data-bs-toggle="tab"
+              data-bs-target="#quicklinks" type="button" role="tab">Quick Links</button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content info-tab-content" id="infoTabContent">
+
+          <!-- Important Tab -->
+          <div class="tab-pane fade show active" id="important" role="tabpanel">
+            <ul class="info-list">
+              <li>
+                For the authentication (Sign Up and Sign In) of Institute Employee,
+                please use 5-digit stakeholder code (Enter zero (0) left side of your
+                PF number to make 5-digit login ID).
+              </li>
+              <li>
+                For any concern in DOB and OTP kindly raise the request to
+                <a href="#">Academic Section (registration@iitj.ac.in)</a>.
+              </li>
+              <li>
+                Guideline for New Admission:
+                <ol class="info-sublist">
+                  <li>Stakeholder Type select 'New Admission'</li>
+                  <li>
+                    Entrance Exam as :
+                    <ul class="info-sublist-items">
+                      <li>MSc in Digital Humanities/CSS , choose IMSC</li>
+                      <li>Master of Design, choose MDES</li>
+                      <li>MTech, Choose MTECH</li>
+                      <li>Cognizant MTech Executive, choose EXEC0</li>
+                      <li>Executive Students, choose EXEC</li>
+                      <li>MTech/PHD, Choose IPGD</li>
+                      <li>PHD candidates, choose PHD</li>
+                      <li>Research Scholars, choose MS</li>
+                      <li>Master in Medical Technologies, choose MFD'</li>
+                      <li>Master PHD in Medical Technologies, choose IPGD</li>
+                      <li>Executive BSc students, choose EBSC</li>
+                    </ul>
+                  </li>
+                  <li>Your Reg/Appl No/ERP Number : Use ERP number</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Message Tab -->
+          <div class="tab-pane fade" id="message" role="tabpanel">
+            <p class="p-2 text-muted" style="font-size:13px;">No messages available.</p>
+          </div>
+
+          <!-- Quick Links Tab -->
+          <div class="tab-pane fade" id="quicklinks" role="tabpanel">
+            <p class="p-2 text-muted" style="font-size:13px;">No quick links available.</p>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /login-left -->
+
+    <!-- RIGHT: Auth Panel -->
+    <div class="login-right">
+      <div class="auth-card">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs auth-tabs" id="authTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="signin-tab" data-bs-toggle="tab"
+              data-bs-target="#signin" type="button" role="tab">Sign In</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" type="button"
+              onclick="window.location.href='signup.html'">Sign Up</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" type="button"
+              onclick="window.location.href='forgot_password.html'">Forgot Password</button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content auth-tab-content" id="authTabContent">
+
+          <!-- Sign In -->
+          <div class="tab-pane fade show active" id="signin" role="tabpanel">
+            <form id="signinForm">
+              <div class="mb-2">
+                <input type="text" class="form-control auth-input"
+                  id="loginId" name="loginId"
+                  placeholder="Stakeholder code/login Id" />
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control auth-input"
+                  id="password" name="password"
+                  placeholder="Password" />
+              </div>
+              <div>
+                <button type="submit" class="btn btn-signin w-100">Sign In</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Sign Up -->
+          <div class="tab-pane fade" id="signup" role="tabpanel">
+            <div style="padding: 10px 2px;">
+              <a href="signup.html" class="btn-signin w-100 d-flex align-items-center justify-content-center text-decoration-none"
+                 style="height:32px; font-size:13px;">
+                New User Sign Up
+              </a>
+            </div>
+          </div>
+
+          <!-- Forgot Password -->
+          <div class="tab-pane fade" id="forgot" role="tabpanel">
+            <div style="padding: 10px 2px;">
+              <a href="forgot_password.html" class="btn-signin w-100 d-flex align-items-center justify-content-center text-decoration-none"
+                 style="height:32px; font-size:13px;">
+                Forgot Password
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /login-right -->
+
+  </div><!-- /login-body -->
+
+  <!-- ===== FOOTER ===== -->
+  <div class="login-footer">
+    Copyright &copy; IIT Jodhpur, India
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

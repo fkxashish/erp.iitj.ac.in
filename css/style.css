@@ -1,0 +1,706 @@
+/* ================================================
+   IIT Jodhpur ERP System — Login Page Styles
+   Bootstrap 5 base + custom overrides only
+   ================================================ */
+
+/* ---- Reset / Base ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* ---- TOP HEADER ---- */
+.login-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  padding: 5px 16px;
+  min-height: 80px;
+}
+
+.header-logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a3875;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.header-subtitle {
+  font-size: 13px;
+  color: #333333;
+  margin-top: 2px;
+}
+
+/* ---- MAIN BODY WRAPPER ---- */
+/* Blue fills entire body; white diagonal area is a ::before pseudo-element */
+.login-body {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 80px - 36px);
+  background-color: #1a3875;
+  position: relative;
+  overflow: hidden;
+}
+
+/* White diagonal left area */
+.login-body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ffffff;
+  clip-path: polygon(0 0, 48% 0, 32% 100%, 0 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Lighter blue triangle — upper-right accent */
+.login-body::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #2f5bbd;
+  clip-path: polygon(48% 0, 100% 0, 100% 58%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- LEFT PANEL ---- */
+.login-left {
+  flex: 0 0 54%;
+  max-width: 54%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px 16px 20px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Info tabs */
+.info-tabs {
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.info-tabs .nav-link {
+  font-size: 13px;
+  color: #333333;
+  padding: 6px 14px;
+  border-radius: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.info-tabs .nav-link.active {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #dee2e6 #dee2e6 #ffffff;
+}
+
+.info-tabs .nav-link:hover:not(.active) {
+  color: #0d6efd;
+}
+
+.info-tab-content {
+  padding: 8px 12px;
+  min-height: 280px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+/* Info list */
+.info-list {
+  padding-left: 16px;
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.info-list li {
+  margin-bottom: 6px;
+}
+
+.info-list a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.info-list a:hover {
+  text-decoration: underline;
+}
+
+.info-sublist {
+  padding-left: 18px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.info-sublist-items {
+  list-style: disc;
+  padding-left: 16px;
+  margin-top: 3px;
+}
+
+/* ---- RIGHT PANEL ---- */
+.login-right {
+  flex: 0 0 46%;
+  max-width: 46%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px 20px 20px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* No separate triangle on right panel — handled by login-body::after */
+.login-right::before {
+  display: none;
+}
+
+.auth-card {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  width: 100%;
+  max-width: 310px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Auth tabs */
+.auth-tabs {
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.auth-tabs .nav-link {
+  font-size: 13px;
+  color: #333333;
+  padding: 6px 12px;
+  border-radius: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.auth-tabs .nav-link.active {
+  color: #ffffff;
+  background-color: #2b4c9b;
+  border-color: #2b4c9b;
+}
+
+.auth-tabs .nav-link:hover:not(.active) {
+  color: #0d6efd;
+  background-color: transparent;
+}
+
+.auth-tab-content {
+  padding: 14px 12px;
+  min-height: 110px;
+}
+
+/* Inputs */
+.auth-input {
+  font-size: 13px;
+  height: 32px;
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  padding: 4px 8px;
+}
+
+.auth-input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #2b4c9b;
+}
+
+/* Sign In button */
+.btn-signin {
+  background-color: #2b4c9b;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  font-size: 13px;
+  height: 32px;
+  padding: 0;
+}
+
+.btn-signin:hover {
+  background-color: #1a3875;
+  color: #ffffff;
+}
+
+/* ---- FOOTER ---- */
+.login-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #dee2e6;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+  font-size: 12px;
+  color: #333333;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .login-body {
+    flex-direction: column;
+    background-color: #ffffff; /* restore white bg when stacked */
+  }
+
+  .login-body::before,
+  .login-body::after {
+    display: none; /* hide diagonal pseudo-elements on mobile */
+  }
+
+  .login-left,
+  .login-right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 16px;
+    background-color: #ffffff;
+  }
+
+  .login-right::before {
+    display: none;
+  }
+
+  .info-card,
+  .auth-card {
+    max-width: 100%;
+  }
+}
+
+/* ================================================
+   Dashboard / Module Page Styles
+   ================================================ */
+
+/* ---- Page base ---- */
+body.erp-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* ---- TOP NAVBAR ---- */
+.erp-navbar {
+  background-color: #2b4c9b;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  flex-shrink: 0;
+}
+
+.erp-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.erp-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.erp-brand {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.erp-nav-link {
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.erp-nav-link:hover {
+  color: #cce0ff;
+  text-decoration: none;
+}
+
+.erp-welcome {
+  color: #ffffff;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.erp-logout {
+  font-size: 13px;
+}
+
+/* ---- SUB-HEADER ---- */
+.erp-subheader {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  flex-shrink: 0;
+}
+
+.erp-subheader-left {
+  font-size: 13px;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.erp-subheader-left .bi {
+  font-size: 14px;
+  color: #333333;
+}
+
+.erp-search {
+  height: 26px;
+  font-size: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  padding: 2px 8px;
+  width: 180px;
+  color: #333333;
+}
+
+.erp-search:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #2b4c9b;
+}
+
+/* ---- MAIN CONTENT AREA ---- */
+.erp-content {
+  flex: 1;
+  padding: 10px 0 20px 0;
+}
+
+/* ---- STATIC PANEL (Dashboard) ---- */
+.erp-panel {
+  margin-bottom: 6px;
+}
+
+.erp-panel-header {
+  background-color: #c8dff0;
+  border-top: 1px solid #b0c8e0;
+  border-bottom: 1px solid #b0c8e0;
+  padding: 5px 10px;
+  font-size: 13px;
+  color: #1a5276;
+}
+
+.erp-panel-body {
+  background-color: #ffffff;
+  border-bottom: 1px solid #b0c8e0;
+  min-height: 40px;
+}
+
+/* ---- ERP FOOTER ---- */
+.erp-footer {
+  background-color: #2b4c9b;
+  color: #ffffff;
+  font-size: 12px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  flex-shrink: 0;
+}
+
+/* ---- BREADCRUMB ---- */
+.erp-breadcrumb {
+  font-size: 12px;
+  padding: 4px 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  color: #333333;
+}
+
+.erp-breadcrumb a {
+  color: #1a5276;
+  text-decoration: none;
+}
+
+.erp-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ---- ACCORDION ROWS (Academic / Hostel) ---- */
+.erp-accordion-item {
+  margin-bottom: 0;
+}
+
+/* Link inside accordion header */
+.erp-acc-link {
+  color: #1a5276;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.erp-acc-link:hover {
+  text-decoration: underline;
+  color: #1a5276;
+}
+
+
+.erp-accordion-header {
+  background-color: #c8dff0;
+  border-top: 1px solid #b0c8e0;
+  border-bottom: 1px solid #b0c8e0;
+  padding: 5px 10px;
+  font-size: 13px;
+  color: #1a5276;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.erp-accordion-header:hover {
+  background-color: #bdd6ea;
+}
+
+.erp-accordion-toggle {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1a5276;
+  line-height: 1;
+}
+
+.erp-accordion-body {
+  background-color: #eaf4fb;
+  border-bottom: 1px solid #b0c8e0;
+  display: none;
+}
+
+.erp-accordion-body.show {
+  display: block;
+}
+
+/* Sub-item row (single item e.g. Student Fees) */
+.erp-subitem-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 14px 5px 20px;
+  border-bottom: 1px solid #d0e8f4;
+  font-size: 13px;
+}
+
+.erp-subitem-row:last-child {
+  border-bottom: none;
+}
+
+.erp-subitem-link {
+  color: #1a5276;
+  text-decoration: none;
+}
+
+.erp-subitem-link:hover {
+  text-decoration: underline;
+}
+
+.erp-info-icon {
+  color: #17a2b8;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+/* Sub-item 3-column grid */
+.erp-subitem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #eaf4fb;
+}
+
+.erp-subitem-cell {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px 5px 20px;
+  border-right: 1px solid #d0e8f4;
+  border-bottom: 1px solid #d0e8f4;
+  font-size: 13px;
+  gap: 6px;
+}
+
+.erp-subitem-cell:nth-child(3n) {
+  border-right: none;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .erp-navbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .erp-subitem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .erp-subitem-cell {
+    border-right: none;
+  }
+
+  .erp-search {
+    width: 130px;
+  }
+}
+
+/* ---- Module link in sub-header ---- */
+.erp-module-link {
+  color: #333333;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.erp-module-link:hover {
+  color: #1a5276;
+  text-decoration: underline;
+}
+
+/* ---- Panel action links (Other Actions on Dashboard) ---- */
+.erp-panel-action-row {
+  padding: 6px 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.erp-panel-action-link {
+  color: #1a5276;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.erp-panel-action-link:hover {
+  text-decoration: underline;
+  color: #1a5276;
+}
+
+/* ---- Student Profile Table ---- */
+.erp-table-wrap {
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.erp-profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .erp-profile-table {
+    max-width: 100%;
+    min-width: 480px;
+  }
+}
+
+.erp-profile-table tr:nth-child(odd) {
+  background-color: #eaf4fb;
+}
+
+.erp-profile-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.erp-profile-label {
+  width: 220px;
+  padding: 7px 10px;
+  font-weight: bold;
+  color: #333333;
+  border: 1px solid #b0c8e0;
+  vertical-align: top;
+}
+
+.erp-profile-value {
+  padding: 7px 10px;
+  color: #333333;
+  border: 1px solid #b0c8e0;
+}
+
+/* ---- Table header (Fees / data tables) ---- */
+.erp-table-th {
+  background-color: #c8dff0;
+  border: 1px solid #b0c8e0;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* ---- Status badges ---- */
+.erp-status-pending {
+  color: #b45309;
+  font-weight: bold;
+}
+
+.erp-status-paid {
+  color: #166534;
+  font-weight: bold;
+}
+
+/* ---- Select / Dropdown ---- */
+.erp-select {
+  height: 26px;
+  font-size: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  padding: 0 6px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.erp-select:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #2b4c9b;
+}
+
+/* Bug 6 — Accordion top gap on academic/hostel page */
+.erp-content.erp-accordion-page {
+  padding-top: 0;
+}
+

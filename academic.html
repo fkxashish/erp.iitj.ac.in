@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP System (Beta), IITJ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="erp-page">
+
+  <!-- ===== TOP NAVBAR ===== -->
+  <nav class="erp-navbar">
+    <div class="erp-navbar-left">
+      <span class="erp-brand">ERP System (Beta), IITJ</span>
+      <a href="dashboard.html" class="erp-nav-link">
+        <i class="bi bi-house-fill"></i> Home
+      </a>
+    </div>
+    <div class="erp-navbar-right">
+      <span class="erp-welcome">Welcome Garima (B25BS1100)</span>
+      <a href="index.html" class="erp-nav-link erp-logout">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== SUB-HEADER ===== -->
+  <div class="erp-subheader">
+    <div class="erp-subheader-left">
+      <i class="bi bi-mortarboard-fill"></i>
+      <a href="academic.html" class="erp-module-link ms-1">Academic</a>
+    </div>
+    <div class="erp-subheader-right">
+      <input type="text" class="erp-search" id="searchMenu" placeholder="Search Menu" />
+    </div>
+  </div>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="erp-breadcrumb">
+    You are in: <a href="academic.html">Academic</a>
+  </div>
+
+  <!-- ===== ACCORDION MENU ===== -->
+  <div class="erp-content erp-accordion-page">
+
+    <!-- 1. Feedback -->
+    <div class="erp-accordion-item" id="acc-feedback">
+      <div class="erp-accordion-header" onclick="erpToggle('body-feedback', this)">
+        <span class="erp-accordion-toggle">+</span>
+        <a href="#" class="erp-acc-link">Feedback</a>
+      </div>
+      <div class="erp-accordion-body" id="body-feedback">
+        <div class="erp-subitem-row">
+          <span class="erp-subitem-link">Feedback Form</span>
+          <i class="bi bi-info-circle-fill erp-info-icon" title="Feedback Form"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Fees -->
+    <div class="erp-accordion-item" id="acc-fees">
+      <div class="erp-accordion-header" onclick="erpToggle('body-fees', this)">
+        <span class="erp-accordion-toggle">+</span>
+        <a href="#" class="erp-acc-link">Fees</a>
+      </div>
+      <div class="erp-accordion-body" id="body-fees">
+        <div class="erp-subitem-row">
+          <span class="erp-subitem-link">Student Fees</span>
+          <i class="bi bi-info-circle-fill erp-info-icon" title="Student Fees"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Result -->
+    <div class="erp-accordion-item" id="acc-result">
+      <div class="erp-accordion-header" onclick="erpToggle('body-result', this)">
+        <span class="erp-accordion-toggle">+</span>
+        <a href="#" class="erp-acc-link">Result</a>
+      </div>
+      <div class="erp-accordion-body" id="body-result">
+        <div class="erp-subitem-row">
+          <a href="my_grades.html" class="erp-subitem-link">[Executive] My Grades</a>
+          <i class="bi bi-info-circle-fill erp-info-icon" title="[Executive] My Grades"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Students -->
+    <div class="erp-accordion-item" id="acc-students">
+      <div class="erp-accordion-header" onclick="erpToggle('body-students', this)">
+        <span class="erp-accordion-toggle">+</span>
+        <a href="#" class="erp-acc-link">Students</a>
+      </div>
+      <div class="erp-accordion-body" id="body-students">
+        <div class="erp-subitem-grid">
+          <!-- Row 1 -->
+          <div class="erp-subitem-cell">
+            <a href="#" class="erp-subitem-link">Apply for Bonafide Certificate</a>
+            <i class="bi bi-info-circle-fill erp-info-icon" title="Apply for Bonafide Certificate"></i>
+          </div>
+          <div class="erp-subitem-cell">
+            <a href="#" class="erp-subitem-link">No Dues Request</a>
+            <i class="bi bi-info-circle-fill erp-info-icon" title="No Dues Request"></i>
+          </div>
+          <div class="erp-subitem-cell">
+            <a href="#" class="erp-subitem-link">Settle Dues</a>
+            <i class="bi bi-info-circle-fill erp-info-icon" title="Settle Dues"></i>
+          </div>
+          <!-- Row 2 -->
+          <div class="erp-subitem-cell">
+            <a href="#" class="erp-subitem-link">Student Convocation Details</a>
+            <i class="bi bi-info-circle-fill erp-info-icon" title="Student Convocation Details"></i>
+          </div>
+          <div class="erp-subitem-cell">
+            <a href="student_profile.html" class="erp-subitem-link">Student Profile [Executive]</a>
+            <i class="bi bi-info-circle-fill erp-info-icon" title="Student Profile [Executive]"></i>
+          </div>
+          <div class="erp-subitem-cell">
+            <a href="#" class="erp-subitem-link">Upload Supporting Documents (New Admission)</a>
+            <i class="bi bi-info-circle-fill erp-info-icon" title="Upload Supporting Documents (New Admission)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Subjects -->
+    <div class="erp-accordion-item" id="acc-subjects">
+      <div class="erp-accordion-header" onclick="erpToggle('body-subjects', this)">
+        <span class="erp-accordion-toggle">+</span>
+        <a href="#" class="erp-acc-link">Subjects</a>
+      </div>
+      <div class="erp-accordion-body" id="body-subjects">
+        <div class="erp-subitem-row">
+          <a href="my_subjects.html" class="erp-subitem-link">My Academic Spectrum</a>
+          <i class="bi bi-info-circle-fill erp-info-icon" title="My Academic Spectrum"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Hostel -->
+    <div class="erp-accordion-item" id="acc-hostel">
+      <div class="erp-accordion-header" onclick="erpToggle('body-hostel', this)">
+        <span class="erp-accordion-toggle">+</span>
+        <a href="#" class="erp-acc-link">Hostel</a>
+      </div>
+      <div class="erp-accordion-body" id="body-hostel">
+        <div class="erp-subitem-row">
+          <a href="hostel_booking.html" class="erp-subitem-link">Hostel Room Booking</a>
+          <i class="bi bi-info-circle-fill erp-info-icon" title="Hostel Room Booking"></i>
+        </div>
+        <div class="erp-subitem-row">
+          <a href="mess_bill.html" class="erp-subitem-link">Mess Bill</a>
+          <i class="bi bi-info-circle-fill erp-info-icon" title="Mess Bill"></i>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /erp-content -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="erp-footer">
+    Copyright &copy; ERP System, IIT Jodhpur, Helpline - (0291)2801176
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
