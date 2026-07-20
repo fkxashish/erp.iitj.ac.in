@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP System (Beta), IITJ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="erp-page">
+
+  <!-- ===== TOP NAVBAR ===== -->
+  <nav class="erp-navbar">
+    <div class="erp-navbar-left">
+      <span class="erp-brand">ERP System (Beta), IITJ</span>
+      <a href="dashboard.html" class="erp-nav-link">
+        <i class="bi bi-house-fill"></i> Home
+      </a>
+    </div>
+    <div class="erp-navbar-right">
+      <span class="erp-welcome">Welcome Garima (B25BS1100)</span>
+      <a href="index.html" class="erp-nav-link erp-logout">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== SUB-HEADER ===== -->
+  <div class="erp-subheader">
+    <div class="erp-subheader-left">
+      <i class="bi bi-mortarboard-fill"></i>
+      <a href="academic.html" class="erp-module-link ms-1">Academic</a>
+    </div>
+    <div class="erp-subheader-right">
+      <input type="text" class="erp-search" id="searchMenu" placeholder="Search Menu" />
+    </div>
+  </div>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="erp-breadcrumb">
+    You are in: <a href="academic.html">Academic</a> &raquo;
+    <a href="academic.html">Fees</a> &raquo;
+    <span id="breadcrumb-view">Fees</span>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="erp-content" style="padding: 10px;">
+
+    <!-- Page Title Bar -->
+    <div class="erp-panel-header" id="fees-page-title" style="margin-bottom: 6px;">
+      Fees
+    </div>
+
+    <!-- ── Generate Demand ── -->
+    <div id="view-generate" class="fees-view" style="display:none;">
+      <table class="erp-profile-table">
+        <thead>
+          <tr>
+            <th class="erp-table-th">Semester</th>
+            <th class="erp-table-th">Fee Head</th>
+            <th class="erp-table-th">Amount (₹)</th>
+            <th class="erp-table-th">Due Date</th>
+            <th class="erp-table-th">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="erp-profile-value">Semester I (2025-26)</td>
+            <td class="erp-profile-value">Tuition Fee</td>
+            <td class="erp-profile-value">45,000</td>
+            <td class="erp-profile-value">30-Jul-2025</td>
+            <td class="erp-profile-value erp-status-pending">Pending</td>
+          </tr>
+          <tr>
+            <td class="erp-profile-value">Semester I (2025-26)</td>
+            <td class="erp-profile-value">Hostel Fee</td>
+            <td class="erp-profile-value">12,000</td>
+            <td class="erp-profile-value">30-Jul-2025</td>
+            <td class="erp-profile-value erp-status-pending">Pending</td>
+          </tr>
+          <tr>
+            <td class="erp-profile-value">Semester I (2025-26)</td>
+            <td class="erp-profile-value">Mess Advance</td>
+            <td class="erp-profile-value">8,000</td>
+            <td class="erp-profile-value">30-Jul-2025</td>
+            <td class="erp-profile-value erp-status-pending">Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── View Demand ── -->
+    <div id="view-view" class="fees-view" style="display:none;">
+      <table class="erp-profile-table">
+        <thead>
+          <tr>
+            <th class="erp-table-th">Demand No</th>
+            <th class="erp-table-th">Semester</th>
+            <th class="erp-table-th">Total Amount (₹)</th>
+            <th class="erp-table-th">Generated On</th>
+            <th class="erp-table-th">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="erp-profile-value">DMD-2526-001</td>
+            <td class="erp-profile-value">Semester I (2025-26)</td>
+            <td class="erp-profile-value">65,000</td>
+            <td class="erp-profile-value">01-Jul-2025</td>
+            <td class="erp-profile-value erp-status-pending">Unpaid</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Payment History ── -->
+    <div id="view-history" class="fees-view" style="display:none;">
+      <table class="erp-profile-table">
+        <thead>
+          <tr>
+            <th class="erp-table-th">Transaction ID</th>
+            <th class="erp-table-th">Semester</th>
+            <th class="erp-table-th">Amount Paid (₹)</th>
+            <th class="erp-table-th">Payment Date</th>
+            <th class="erp-table-th">Mode</th>
+            <th class="erp-table-th">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="erp-profile-value" colspan="6" style="text-align:center; color:#888;">
+              No payment records found.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Download Receipt ── -->
+    <div id="view-receipt" class="fees-view" style="display:none;">
+      <table class="erp-profile-table">
+        <thead>
+          <tr>
+            <th class="erp-table-th">Receipt No</th>
+            <th class="erp-table-th">Semester</th>
+            <th class="erp-table-th">Amount (₹)</th>
+            <th class="erp-table-th">Date</th>
+            <th class="erp-table-th">Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="erp-profile-value" colspan="5" style="text-align:center; color:#888;">
+              No receipts available.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /erp-content -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="erp-footer">
+    Copyright &copy; ERP System, IIT Jodhpur, Helpline - (0291)2801176
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Read ?view= from URL and show the matching section
+    (function () {
+      var params  = new URLSearchParams(window.location.search);
+      var view    = params.get('view') || 'generate';
+
+      var titles = {
+        generate : 'Generate Demand',
+        view     : 'View Demand',
+        history  : 'Payment History',
+        receipt  : 'Download Receipt'
+      };
+
+      // Set page title bar and breadcrumb
+      var titleEl = document.getElementById('fees-page-title');
+      var bcEl    = document.getElementById('breadcrumb-view');
+      if (titles[view]) {
+        titleEl.textContent = titles[view];
+        bcEl.textContent    = titles[view];
+      }
+
+      // Show matching view, hide others
+      var views = document.querySelectorAll('.fees-view');
+      views.forEach(function (el) { el.style.display = 'none'; });
+
+      var target = document.getElementById('view-' + view);
+      if (target) target.style.display = 'block';
+    })();
+  </script>
+</body>
+</html>

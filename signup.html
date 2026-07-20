@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIT Jodhpur ERP System — Sign Up</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- Sign Up Page specific styles ---- */
+    .signup-body {
+      background-color: #ffffff;
+      min-height: calc(100vh - 80px - 36px);
+      padding: 20px 28px 30px 28px;
+    }
+
+    .signup-section-title {
+      font-size: 17px;
+      font-weight: normal;
+      color: #222222;
+      margin: 18px 0 10px 0;
+      padding: 0;
+    }
+
+    /* Two-column label + field table */
+    .signup-table {
+      width: 100%;
+      max-width: 580px;
+      border-collapse: separate;
+      border-spacing: 0 5px;
+    }
+
+    .signup-label {
+      width: 135px;
+      font-size: 13px;
+      color: #333333;
+      vertical-align: middle;
+      padding: 4px 10px 4px 0;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .signup-field {
+      padding: 0;
+    }
+
+    .signup-input {
+      width: 100%;
+      height: 30px;
+      font-size: 13px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      padding: 3px 8px;
+      color: #555555;
+      background-color: #ffffff;
+      outline: none;
+    }
+
+    .signup-input:focus {
+      border-color: #2b4c9b;
+      outline: none;
+      box-shadow: none;
+    }
+
+    select.signup-input {
+      appearance: auto;
+      -webkit-appearance: auto;
+      background-color: #ffffff;
+    }
+
+    /* Security Questions grid — two equal columns */
+    .secq-grid {
+      max-width: 580px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 8px;
+      margin-bottom: 6px;
+    }
+
+    .secq-input {
+      width: 100%;
+      height: 30px;
+      font-size: 13px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      padding: 3px 8px;
+      color: #555555;
+      background-color: #ffffff;
+      outline: none;
+    }
+
+    .secq-input:focus {
+      border-color: #2b4c9b;
+      outline: none;
+    }
+
+    /* NOTE text in red */
+    .signup-note {
+      font-size: 13px;
+      font-weight: bold;
+      color: #cc0000;
+      margin-bottom: 8px;
+      max-width: 580px;
+    }
+
+    /* Confirm section */
+    .signup-confirm-title {
+      font-size: 17px;
+      font-weight: normal;
+      color: #222222;
+      margin: 18px 0 10px 0;
+    }
+
+    .btn-signup {
+      background-color: #2b4c9b;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      height: 30px;
+      padding: 0 22px;
+      cursor: default; /* visual only */
+    }
+
+    .btn-signup:hover {
+      background-color: #1a3875;
+      color: #ffffff;
+    }
+
+    /* Divider between sections */
+    .signup-divider {
+      max-width: 580px;
+      border: none;
+      border-top: 1px solid #eeeeee;
+      margin: 14px 0 4px 0;
+    }
+
+    /* Page-level tab bar (Sign In | Sign Up | Forgot Password) */
+    .page-tab-bar {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid #dee2e6;
+      background-color: #f8f9fa;
+      margin-bottom: 0;
+      padding: 0 28px;
+    }
+
+    .page-tab-btn {
+      font-size: 13px;
+      color: #333333;
+      padding: 7px 14px;
+      border: 1px solid transparent;
+      border-radius: 0;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1.5;
+    }
+
+    .page-tab-btn:hover:not(.active) {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .page-tab-btn.active {
+      color: #333333;
+      background-color: #ffffff;
+      border-color: #dee2e6 #dee2e6 #ffffff;
+      margin-bottom: -1px;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOP HEADER (same as login page) ===== -->
+  <div class="login-header d-flex align-items-center" style="gap: 14px; padding: 5px 16px;">
+    <img src="assets/iitj-logo.png.jpg" alt="IIT Jodhpur Logo" class="header-logo" />
+    <div>
+      <div class="header-title">Indian Institute of Technology Jodhpur</div>
+      <div class="header-subtitle">Enterprise Resource Planning (Beta Version)</div>
+    </div>
+  </div>
+
+  <!-- ===== SIGN UP FORM ===== -->
+  <!-- Tab bar -->
+  <div class="page-tab-bar">
+    <a href="index.html"         class="page-tab-btn">Sign In</a>
+    <a href="signup.html"        class="page-tab-btn active">Sign Up</a>
+    <a href="forgot_password.html" class="page-tab-btn">Forgot Password</a>
+  </div>
+
+  <div class="signup-body">
+
+    <!-- ── Section 1: New User Sign Up ── -->
+    <h4 class="signup-section-title">New User Sign Up</h4>
+
+    <table class="signup-table">
+      <tbody>
+        <tr>
+          <td class="signup-label">Stakeholder Type</td>
+          <td class="signup-field">
+            <select class="signup-input" id="stakeholderType">
+              <option value="">Please Select</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Stakeholder Code</td>
+          <td class="signup-field">
+            <input type="text" class="signup-input" id="stakeholderCode"
+              placeholder="Emp Code/Rollno etc (as applicable)" />
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Stakeholder Name</td>
+          <td class="signup-field">
+            <input type="text" class="signup-input" id="stakeholderName"
+              placeholder="Your Name" style="background-color:#f0f0f0;" />
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Your Login Id</td>
+          <td class="signup-field">
+            <input type="text" class="signup-input" id="loginId"
+              placeholder="Your Login Id" style="background-color:#f0f0f0;" />
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Password</td>
+          <td class="signup-field">
+            <input type="password" class="signup-input" id="password"
+              placeholder="Enter your new password here" />
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Confirm Password</td>
+          <td class="signup-field">
+            <input type="password" class="signup-input" id="confirmPassword"
+              placeholder="Re-enter your new password here" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="signup-divider" />
+
+    <!-- ── Section 2: Digital Signature Information ── -->
+    <h4 class="signup-section-title">Digital Signature Information</h4>
+
+    <table class="signup-table">
+      <tbody>
+        <tr>
+          <td class="signup-label">Alias</td>
+          <td class="signup-field">
+            <input type="text" class="signup-input" id="alias"
+              placeholder="Your alias (same as login id)" style="background-color:#f0f0f0;" />
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Passphrase</td>
+          <td class="signup-field">
+            <input type="password" class="signup-input" id="passphrase"
+              placeholder="Enter your passphrase here" />
+          </td>
+        </tr>
+        <tr>
+          <td class="signup-label">Confirm Passphrase</td>
+          <td class="signup-field">
+            <input type="password" class="signup-input" id="confirmPassphrase"
+              placeholder="Re-enter your new passphrase here" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="signup-divider" />
+
+    <!-- ── Section 3: Information for Verification ── -->
+    <h4 class="signup-section-title">Information for Verification</h4>
+
+    <table class="signup-table">
+      <tbody>
+        <tr>
+          <td class="signup-label">Date of birth (DD-MM-YYYY)</td>
+          <td class="signup-field">
+            <input type="text" class="signup-input" id="dob"
+              placeholder="Click here to get calendar"
+              style="background-color:#f0f0f0;" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="signup-divider" />
+
+    <!-- ── Section 4: Security Questions ── -->
+    <h4 class="signup-section-title">Security Questions</h4>
+
+    <p class="signup-note">NOTE: Security Question will be asked on login.</p>
+
+    <div class="secq-grid">
+      <input type="text" class="secq-input" id="q1" placeholder="First question" />
+      <input type="text" class="secq-input" id="a1" placeholder="Answer of first question" />
+
+      <input type="text" class="secq-input" id="q2" placeholder="Second question" />
+      <input type="text" class="secq-input" id="a2" placeholder="Answer of second question" />
+
+      <input type="text" class="secq-input" id="q3" placeholder="Third question" />
+      <input type="text" class="secq-input" id="a3" placeholder="Answer of third question" />
+    </div>
+
+    <hr class="signup-divider" />
+
+    <!-- ── Confirm ── -->
+    <h4 class="signup-confirm-title">Confirm</h4>
+    <button type="button" class="btn-signup" id="signupBtn">Sign Up</button>
+
+  </div><!-- /signup-body -->
+
+  <!-- ===== FOOTER (same as login page) ===== -->
+  <div class="login-footer">
+    Copyright &copy; IIT Jodhpur, India
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
